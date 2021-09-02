@@ -1,0 +1,27 @@
+Package: u5mr
+Type: Package
+Title: Under-five Child Mortality Estimation  
+Version: 0.1.0
+Authors@R: 
+    c(person(given = "Myo Minn",
+             family = "Oo",
+             role = c("aut", "cre"),
+             email = "dr.myominnoo@gmail.com",
+             comment = c(ORCID = "0000-0003-4089-016X")))
+Maintainer: Myo Minn Oo <dr.myominnoo@gmail.com>
+Description: This is a tool for estimating child mortality. 
+    Current implementation includes the Trussell version of the Brass method using 
+    the Coale-Demeny model life tables and supporting datasets of coefficients and
+    automatic interpolating values between probabilities of dying at a certain age 
+    and model tables. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+LazyDataCompression: bzip2
+Depends: R(>= 4.0.0)
+VignetteBuilder: knitr
+Suggests: knitr, rmarkdown
+RoxygenNote: 7.1.1
+Roxygen: list(markdown = TRUE)
+Imports: 
+    lifecycle
