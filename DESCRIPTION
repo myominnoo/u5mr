@@ -1,6 +1,6 @@
 Package: u5mr
 Type: Package
-Title: Under-five Child Mortality Estimation  
+Title: Under-Five Child Mortality Estimation  
 Version: 0.1.0
 Authors@R: 
     c(person(given = "Myo Minn",
@@ -14,12 +14,13 @@ Description: This is a tool for estimating child mortality.
     the Coale-Demeny model life tables and supporting datasets of coefficients and
     automatic interpolating values between probabilities of dying at a certain age 
     and model tables. 
-License: MIT + file LICENSE
+URL: https://github.com/myominnoo/u5mr
+BugReports: https://github.com/myominnoo/u5mr/issues
+Depends: R(>= 4.0.0)
+License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
 LazyDataCompression: bzip2
-Depends: R(>= 4.0.0)
-VignetteBuilder: knitr
 Suggests: knitr, rmarkdown
 RoxygenNote: 7.1.1
 Roxygen: list(markdown = TRUE)
