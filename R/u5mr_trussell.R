@@ -2,7 +2,7 @@
 #'
 #' @description
 #'
-#' \Sexpr[results=rd]{lifecycle::badge("stable")}
+#' `r lifecycle::badge("stable")`
 #'
 #' `u5mr_trussell()` produces under-five mortality estimates along with different statistics.
 #'
