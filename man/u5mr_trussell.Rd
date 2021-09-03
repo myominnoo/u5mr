@@ -51,7 +51,7 @@ u5mr_trussell(
 }
 }
 \description{
-\Sexpr[results=rd]{lifecycle::badge("stable")}
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#stable}{\figure{lifecycle-stable.svg}{options: alt='[Stable]'}}}{\strong{[Stable]}}
 
 \code{u5mr_trussell()} produces under-five mortality estimates along with different statistics.
 }
