@@ -16,7 +16,7 @@ u5mr_trussell(
 )
 }
 \arguments{
-\item{data}{preprocessed data}
+\item{data}{processed data}
 
 \item{women_total}{total number of women}
 
@@ -69,7 +69,7 @@ The function needs four variables from the input data:
 a) \code{agegrp}: age groups representing \code{15-19}, \code{20-24}, \code{25-29}, \code{30-34},
 \code{35-39}, \code{40-44}, and \code{45-49}.
 
-b) \code{women_total}: the total number of women inthe age group irrespective of their marital
+b) \code{women_total}: the total number of women in the age group irrespective of their marital
 or reporting status
 
 c) \code{child_born}: the total number of children ever borne by these women
@@ -92,7 +92,7 @@ Step 1.2. Calculation of the proportions dead among children ever borne \code{D(
 \item \code{CD(i)} is the number of children dead for women of age group i
 }
 
-Step 2. Calculating the mulitpliers \code{k(i)} and probabilities of dying by age x \code{q(x)}
+Step 2. Calculating the multipliers \code{k(i)} and probabilities of dying by age x \code{q(x)}
 
 \deqn{k(i) = a(i) + b(i) P(1)/P(2) + c(i) P(2)/P(3)}
 
@@ -114,7 +114,7 @@ the survey or census, expressed in decimal terms.
 Step 4. Interpolating between \code{q(x)} and model life table
 
 A common index, in this case, under-five mortality \code{q(5)} can be obtained by
-conversions of corresponding \code{q(x)} values to the pre-specified family of
+conversions of corresponding \code{q(x)} values to the specified family of
 the Coale-Demeny life table models. In a given life table family and sex,
 the first step is to identify the mortality levels with q(x) values that
 enclose the estimated value \eqn{q^e(x)}.

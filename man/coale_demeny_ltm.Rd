@@ -22,9 +22,9 @@ such a way that \code{e0} of 20 years corresponds to level 1 and \code{e0} of 80
 corresponds to level 25.
 }
 \details{
-The four underlying mortality patterns fo the Coale-Demeny models are called
+The four underlying mortality patterns of the Coale-Demeny models are called
 "North", "South", "East" and "West". They were identified through statistical
-and graphical analysis of a alarge number of life tables of acceptable quality,
+and graphical analysis of a large number of life tables of acceptable quality,
 mainly for European countries.
 }
 \references{
