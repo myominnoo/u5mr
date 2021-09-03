@@ -6,9 +6,9 @@
 #' such a way that `e0` of 20 years corresponds to level 1 and `e0` of 80 years
 #' corresponds to level 25.
 #'
-#' The four underlying mortality patterns fo the Coale-Demeny models are called
+#' The four underlying mortality patterns of the Coale-Demeny models are called
 #' "North", "South", "East" and "West". They were identified through statistical
-#' and graphical analysis of a alarge number of life tables of acceptable quality,
+#' and graphical analysis of a large number of life tables of acceptable quality,
 #' mainly for European countries.
 #'
 #' @docType data
@@ -116,7 +116,7 @@
 
 #' Panama 1976
 #'
-#' The data gathered by a survey in Panama between Augst and October 1976
+#' The data gathered by a survey in Panama between August and October 1976
 #' can be used to demonstrate the estimation of child mortality from summary birth histories
 #' using the Trussell version of the BRASS method and the Coale-Demeny life table models
 #' \code{\link{coale_demeny_ltm}}.

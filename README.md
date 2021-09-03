@@ -17,11 +17,11 @@ dying at a certain age and model tables.
 
 ## Installation
 
-You can install the package from GitHub via the {remotes
-package}(<https://remotes.r-lib.org/>):
+To download the development version of the package, use the code below.
 
 ``` r
-remotes::install_github("myominnoo/u5mr")
+# install.packages("devtools")
+devtools::install_github("myominnoo/u5mr")
 ```
 
 ## Usage

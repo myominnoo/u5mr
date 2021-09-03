@@ -6,7 +6,7 @@
 #'
 #' `u5mr_trussell()` produces under-five mortality estimates along with different statistics.
 #'
-#' @param data preprocessed data
+#' @param data processed data
 #' @param women_total total number of women
 #' @param child_born children ever born
 #' @param child_dead children dead
@@ -31,7 +31,7 @@
 #' a) `agegrp`: age groups representing `15-19`, `20-24`, `25-29`, `30-34`,
 #' `35-39`, `40-44`, and `45-49`.
 #'
-#' b) `women_total`: the total number of women inthe age group irrespective of their marital
+#' b) `women_total`: the total number of women in the age group irrespective of their marital
 #' or reporting status
 #'
 #' c) `child_born`: the total number of children ever borne by these women
@@ -55,7 +55,7 @@
 #'
 #'
 #'
-#' Step 2. Calculating the mulitpliers `k(i)` and probabilities of dying by age x `q(x)`
+#' Step 2. Calculating the multipliers `k(i)` and probabilities of dying by age x `q(x)`
 #'
 #' \deqn{k(i) = a(i) + b(i) P(1)/P(2) + c(i) P(2)/P(3)}
 #'
@@ -79,7 +79,7 @@
 #' Step 4. Interpolating between `q(x)` and model life table
 #'
 #' A common index, in this case, under-five mortality `q(5)` can be obtained by
-#' conversions of corresponding `q(x)` values to the pre-specified family of
+#' conversions of corresponding `q(x)` values to the specified family of
 #' the Coale-Demeny life table models. In a given life table family and sex,
 #' the first step is to identify the mortality levels with q(x) values that
 #' enclose the estimated value \eqn{q^e(x)}.
