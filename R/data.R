@@ -119,7 +119,7 @@
 
 #' Panama 1976
 #'
-#' The data gathered by a survey in Panama between Augst and October 1976
+#' The data gathered by a survey in Panama between August and October 1976
 #' can be used to demonstrate the estimation of child mortality from summary birth histories
 #' using the Trussell version of the BRASS method and the Coale-Demeny model life tables
 #' \code{\link{coale_demeny_ltm}}.

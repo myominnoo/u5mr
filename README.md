@@ -6,7 +6,11 @@
 <!-- badges: start -->
 
 [![Lifecycle:
+<<<<<<< HEAD
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+=======
+maturing](man/figures/lifecycle-maturing.svg)](https://lifecycle.r-lib.org/articles/stages.html)
+>>>>>>> 25019f6af33b3b11092c9899e82431ba3bb30468
 <!-- badges: end -->
 
 `u5mr` is a open-source R package for estimating the child mortality.
@@ -17,8 +21,12 @@ dying at a certain age and model tables.
 
 ## Installation
 
+<<<<<<< HEAD
 To download the developmental version of the u5mr package, use the code
 below.
+=======
+To download the development version of the package, use the code below.
+>>>>>>> 25019f6af33b3b11092c9899e82431ba3bb30468
 
 ``` r
 # install.packages("devtools")
@@ -208,6 +216,7 @@ For questions and other discussion, please directly email me
 
 To cite the u5mr package in publications use
 
+<<<<<<< HEAD
 ``` 
   @Manual{Myo2020space,
     title = {Under-Five Child Mortality Estimation using the R Package u5mr},
@@ -240,8 +249,15 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+=======
+      @Manual{Myo2020space,
+        title = {Under-Five Child Mortality Estimation using the R Package u5mr},
+        author = {Myo Minn Oo},
+        year = {2021}
+      }
+>>>>>>> 25019f6af33b3b11092c9899e82431ba3bb30468
 
------
+------------------------------------------------------------------------
 
 Please note that this project is looking for contributors. By
 participating in this project, you agree to abide by its terms with

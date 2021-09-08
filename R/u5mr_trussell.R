@@ -2,13 +2,22 @@
 #'
 #' @description
 #'
+<<<<<<< HEAD
 #' `r lifecycle::badge('stable')`
+=======
+#' `r lifecycle::badge("stable")`
+>>>>>>> 25019f6af33b3b11092c9899e82431ba3bb30468
 #'
 #' `u5mr_trussell()` uses the Trussell version of the BRASS method
 #' and calculates under-five mortality estimates.
 #'
+<<<<<<< HEAD
 #' @param data preprocessed data
 #' @param women total number of women
+=======
+#' @param data processed data
+#' @param women_total total number of women
+>>>>>>> 25019f6af33b3b11092c9899e82431ba3bb30468
 #' @param child_born children ever born
 #' @param child_dead children dead
 #' @param agegrp age grouping
@@ -32,7 +41,11 @@
 #' a) `agegrp`: age groups representing `15-19`, `20-24`, `25-29`, `30-34`,
 #' `35-39`, `40-44`, and `45-49`.
 #'
+<<<<<<< HEAD
 #' b) `women`: the total number of women in the age group irrespective of their marital
+=======
+#' b) `women_total`: the total number of women in the age group irrespective of their marital
+>>>>>>> 25019f6af33b3b11092c9899e82431ba3bb30468
 #' or reporting status
 #'
 #' c) `child_born`: the total number of children ever borne by these women
@@ -80,7 +93,7 @@
 #' Step 4. Interpolating between `q(x)` and model life table
 #'
 #' A common index, in this case, under-five mortality `q(5)` can be obtained by
-#' conversions of corresponding `q(x)` values to the pre-specified family of
+#' conversions of corresponding `q(x)` values to the specified family of
 #' the Coale-Demeny life table models. In a given life table family and sex,
 #' the first step is to identify the mortality levels with q(x) values that
 #' enclose the estimated value \eqn{q^e(x)}.
