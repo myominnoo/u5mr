@@ -16,7 +16,7 @@ data(bangladesh)
 \description{
 The data gathered by the 1974 Bangladesh Retrospective Survey of Fertility and Mortality
 can be used to demonstrate the estimation of child mortality from summary birth histories
-using the Trussell version of the BRASS method and the Coale-Demeny life table models
+using the Trussell version of the BRASS method and the Coale-Demeny model life tables
 \code{\link{coale_demeny_ltm}}.
 }
 \details{

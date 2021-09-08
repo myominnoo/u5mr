@@ -6,46 +6,46 @@
 \usage{
 u5mr_trussell(
   data,
-  women_total = "women_total",
+  women = "women",
   child_born = "child_born",
   child_dead = "child_dead",
-  sex,
   agegrp = "agegrp",
   model = "west",
-  year = 1976.5
+  svy_year = 1976.5,
+  sex
 )
 }
 \arguments{
 \item{data}{preprocessed data}
 
-\item{women_total}{total number of women}
+\item{women}{total number of women}
 
 \item{child_born}{children ever born}
 
 \item{child_dead}{children dead}
-
-\item{sex}{indicates sex-specific estimates: \code{both}, \code{male}, and \code{female}}
 
 \item{agegrp}{age grouping}
 
 \item{model}{Coale-Demeny life table model:
 \code{north}, \code{south}, \code{east}, and \code{west}}
 
-\item{year}{end of the survey}
+\item{svy_year}{end of the survey}
+
+\item{sex}{indicates sex-specific estimates: \code{both}, \code{male}, and \code{female}}
 }
 \value{
 \code{data.frame}
 \itemize{
 \item \code{agegrp}      - five-year age groups
-\item \code{women_total} - total number of women
+\item \code{women} - total number of women
 \item \code{child_born}  - total number of children ever born
 \item \code{child_dead}  - number of children dead
 \item \code{pi} - average parity
 \item \code{di} - proportion of dead among children ever born
 \item \code{ki} - multipliers
 \item \code{qx} - probabilities of dying at age x
-\item \code{ti} - time reference
-\item \code{ref_date} - time reference date
+\item \code{ti} - time between survey year and interpolated year
+\item \code{year} - reference year
 \item \code{h}  - interpolation factor
 \item \code{q5} - under-five mortality
 }
@@ -53,7 +53,8 @@ u5mr_trussell(
 \description{
 \Sexpr[results=rd]{lifecycle::badge("stable")}
 
-\code{u5mr_trussell()} produces under-five mortality estimates along with different statistics.
+\code{u5mr_trussell()} uses the Trussell version of the BRASS method
+and calculates under-five mortality estimates.
 }
 \details{
 T. J. Trussell developed the Trussell version of the Brass method to estimate
@@ -69,7 +70,7 @@ The function needs four variables from the input data:
 a) \code{agegrp}: age groups representing \code{15-19}, \code{20-24}, \code{25-29}, \code{30-34},
 \code{35-39}, \code{40-44}, and \code{45-49}.
 
-b) \code{women_total}: the total number of women inthe age group irrespective of their marital
+b) \code{women}: the total number of women in the age group irrespective of their marital
 or reporting status
 
 c) \code{child_born}: the total number of children ever borne by these women
@@ -92,7 +93,7 @@ Step 1.2. Calculation of the proportions dead among children ever borne \code{D(
 \item \code{CD(i)} is the number of children dead for women of age group i
 }
 
-Step 2. Calculating the mulitpliers \code{k(i)} and probabilities of dying by age x \code{q(x)}
+Step 2. Calculating the multipliers \code{k(i)} and probabilities of dying by age x \code{q(x)}
 
 \deqn{k(i) = a(i) + b(i) P(1)/P(2) + c(i) P(2)/P(3)}
 
@@ -139,56 +140,62 @@ as well as statistics produced during the computational procedure.
 }
 \examples{
 
-\dontrun{
 ## Using Bangladesh survey data to estimate child mortality
 data("bangladesh")
-bang_both <- u5mr_trussell(bangladesh, sex = "both", model = "south", year = 1974.3)
+bang_both <- u5mr_trussell(bangladesh, sex = "both", model = "south", svy_year = 1974.3)
 bang_male <- u5mr_trussell(bangladesh, child_born = "male_born",
                  child_dead = "male_dead", sex = "male",
-                 model = "south", year = 1974.3)
+                 model = "south", svy_year = 1974.3)
 bang_female <- u5mr_trussell(bangladesh, child_born = "female_born",
                  child_dead = "female_dead", sex = "female",
-                 model = "south", year = 1974.3)
+                 model = "south", svy_year = 1974.3)
 
 ## plotting all data points
 with(bang_both,
-    plot(ref_date, q5, type = "b", pch = 19,
+    plot(year, q5, type = "b", pch = 19,
          ylim = c(0, .45),
          col = "black", xlab = "Reference date", ylab = "u5MR",
          main = paste0("Under-five mortality, q(5) in Bangladesh, estimated\n",
                        "using model South and the Trussell version of the Brass method")))
-with(bang_both, text(ref_date, q5, agegrp, cex=0.65, pos=3,col="purple"))
+with(bang_both, text(year, q5, agegrp, cex=0.65, pos=3,col="purple"))
 with(bang_male,
-    lines(ref_date, q5, pch = 18, col = "red", type = "b", lty = 2))
+    lines(year, q5, pch = 18, col = "red", type = "b", lty = 2))
 with(bang_female,
-    lines(ref_date, q5, pch = 18, col = "blue", type = "b", lty = 3))
+    lines(year, q5, pch = 18, col = "blue", type = "b", lty = 3))
 legend("bottomright", legend=c("Both sexes", "Male", "Female"),
       col = c("Black", "red", "blue"), lty = 1:3, cex=0.8)
 
 
 ## Using panama survey data to estimate child mortality
 data("panama")
-pnm_both <- u5mr_trussell(panama, sex = "both", model = "west", year = 1976.5)
+pnm_both <- u5mr_trussell(panama, sex = "both", model = "west", svy_year = 1976.5)
 pnm_male <- u5mr_trussell(panama, child_born = "male_born",
                 child_dead = "male_dead", sex = "male",
-                model = "west", year = 1976.5)
+                model = "west", svy_year = 1976.5)
 pnm_female <- u5mr_trussell(panama, child_born = "female_born",
                 child_dead = "female_dead", sex = "female",
-                model = "west", year = 1976.5)
+                model = "west", svy_year = 1976.5)
 
 ## plotting all data points
 with(pnm_both,
-    plot(ref_date, q5, type = "b", pch = 19,
+    plot(year, q5, type = "b", pch = 19,
         ylim = c(0, .2), col = "black", xlab = "Reference date", ylab = "u5MR",
          main = paste0("Under-five mortality, q(5) in Panama, estimated\n",
                        "using model West and the Trussell version of the Brass method")))
-with(pnm_both, text(ref_date, q5, agegrp, cex=0.65, pos=3,col="purple"))
+with(pnm_both, text(year, q5, agegrp, cex=0.65, pos=3,col="purple"))
 with(pnm_male,
-    lines(ref_date, q5, pch = 18, col = "red", type = "b", lty = 2))
+    lines(year, q5, pch = 18, col = "red", type = "b", lty = 2))
 with(pnm_female,
-    lines(ref_date, q5, pch = 18, col = "blue", type = "b", lty = 3))
+    lines(year, q5, pch = 18, col = "blue", type = "b", lty = 3))
 legend("bottomleft", legend=c("Both sexes", "Male", "Female"),
       col = c("Black", "red", "blue"), lty = 1:3, cex=0.8)
-}
 
+}
+\references{
+\enumerate{
+\item United Nations (1990) "Step-by-step guide to the estimation of the child mortality"
+\url{https://www.un.org/en/development/desa/population/publications/pdf/mortality/stepguide_childmort.pdf}
+\item United Nations (1983) "Manual X indirect techniques for demographic estimation"
+\url{https://www.un.org/en/development/desa/population/publications/pdf/mortality/stepguide_childmort.pdf}
+}
 }

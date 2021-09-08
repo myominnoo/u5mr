@@ -169,7 +169,7 @@
 #' @keywords datasets
 #'
 #' @references Rajaratnam JK, Tran LN, Lopez AD, Murray CJL (2010) Measuring Under-Five Mortality: Validation of New Low-Cost Methods. PLOS Medicine 7(4): e1000253.
-#' (\doi{10.1371/journal.pmed.1000253}{10.1371/journal.pmed.1000253})
+#' (\href{https://doi.org/10.1371/journal.pmed.1000253}{10.1371/journal.pmed.1000253})
 #'
 #' @source \href{https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1000253}{PLoS MEDICINE}
 "microdata"
@@ -214,7 +214,7 @@
 #' @keywords datasets
 #'
 #' @references Rajaratnam JK, Tran LN, Lopez AD, Murray CJL (2010) Measuring Under-Five Mortality: Validation of New Low-Cost Methods. PLOS Medicine 7(4): e1000253.
-#' (\doi{10.1371/journal.pmed.1000253}{10.1371/journal.pmed.1000253})
+#' (\href{https://doi.org/10.1371/journal.pmed.1000253}{10.1371/journal.pmed.1000253})
 #'
 #' @source \href{https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1000253}{PLoS MEDICINE}
 "cambodia"

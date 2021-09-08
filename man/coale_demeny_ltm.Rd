@@ -3,7 +3,7 @@
 \docType{data}
 \name{coale_demeny_ltm}
 \alias{coale_demeny_ltm}
-\title{Coale-Demeny Life Table Models (1983)}
+\title{Coale-Demeny Model Life Tables}
 \format{
 An object of class \code{"list"}; consist of four \code{data.frame} for
 \code{male}, \code{female} and \verb{both sexes}.
@@ -22,10 +22,13 @@ such a way that \code{e0} of 20 years corresponds to level 1 and \code{e0} of 80
 corresponds to level 25.
 }
 \details{
-The four underlying mortality patterns fo the Coale-Demeny models are called
+The four underlying mortality patterns of the Coale-Demeny models are called
 "North", "South", "East" and "West". They were identified through statistical
-and graphical analysis of a alarge number of life tables of acceptable quality,
+and graphical analysis of a large number of life tables of acceptable quality,
 mainly for European countries.
+
+Reference: United Nations (1990) "Step-by-step guide to the estimation of the child mortality"
+\url{https://www.un.org/en/development/desa/population/publications/pdf/mortality/stepguide_childmort.pdf}
 }
 \references{
 United Nations Population Studies (1990) Step-by-Step Guide
