@@ -41,7 +41,7 @@ u5mr_cohort(
 }
 }
 \description{
-\Sexpr[results=rd]{lifecycle::badge("stable")}
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#stable}{\figure{lifecycle-stable.svg}{options: alt='[Stable]'}}}{\strong{[Stable]}}
 
 \code{u5mr_cohort()} uses the maternal age cohort-derived methods (MAC) through summary
 birth history information and maternal age (or time since first birth) to

@@ -70,11 +70,7 @@ The function needs four variables from the input data:
 a) \code{agegrp}: age groups representing \code{15-19}, \code{20-24}, \code{25-29}, \code{30-34},
 \code{35-39}, \code{40-44}, and \code{45-49}.
 
-<<<<<<< HEAD
 b) \code{women}: the total number of women in the age group irrespective of their marital
-=======
-b) \code{women_total}: the total number of women in the age group irrespective of their marital
->>>>>>> 25019f6af33b3b11092c9899e82431ba3bb30468
 or reporting status
 
 c) \code{child_born}: the total number of children ever borne by these women

@@ -1,12 +1,8 @@
 Package: u5mr
 Type: Package
 Title: Under-Five Child Mortality Estimation  
-<<<<<<< HEAD
 Version: 0.1.1
-=======
-Version: 0.1.0
-Date: 2021-09-02
->>>>>>> 25019f6af33b3b11092c9899e82431ba3bb30468
+Date: 2021-09-08
 Authors@R: 
     c(person(given = "Myo Minn",
              family = "Oo",
@@ -14,23 +10,14 @@ Authors@R:
              email = "dr.myominnoo@gmail.com",
              comment = c(ORCID = "0000-0003-4089-016X")))
 Maintainer: Myo Minn Oo <dr.myominnoo@gmail.com>
-<<<<<<< HEAD
 Description: Contains functions for calculating under-five child mortality estimates using the Trussell version of the Brass method (United Nations (1990) <https://www.un.org/en/development/desa/population/publications/pdf/mortality/stepguide_childmort.pdf> and United Nations (1983) <https://www.un.org/en/development/desa/population/publications/pdf/mortality/stepguide_childmort.pdf>) as well as applying the cohort-derived methods by Rajaratnam and colleagues (Rajaratnam JK, Tran LN, Lopez AD, Murray CJL (2010) "Measuring Under-Five Mortality: Validation of New Low-Cost Methods" <doi:10.1371/journal.pmed.1000253>).
-License: MIT + file LICENSE
-Encoding: UTF-8
-LazyData: true
-LazyDataCompression: bzip2
-Depends: R(>= 4.0.0)
-=======
-Description: This is a tool for estimating child mortality. Current implementation includes the Trussell version of the Brass method using the Coale-Demeny model life tables and supporting datasets of coefficients and automatic interpolating values between probabilities of dying at a certain age and model tables. 
-URL: https://github.com/myominnoo/u5mr
-BugReports: https://github.com/myominnoo/u5mr/issues
-Depends: R(>= 4.0.0)
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
 LazyDataCompression: bzip2
->>>>>>> 25019f6af33b3b11092c9899e82431ba3bb30468
+Depends: R(>= 4.0.0)
+URL: https://github.com/myominnoo/u5mr
+BugReports: https://github.com/myominnoo/u5mr/issues
 Suggests: knitr, rmarkdown
 RoxygenNote: 7.1.1
 Roxygen: list(markdown = TRUE)

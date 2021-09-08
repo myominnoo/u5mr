@@ -2,6 +2,8 @@ Package: u5mr
 Type: Package
 Title: Under-Five Child Mortality Estimation  
 Version: 0.1.1
+Version: 0.1.0
+Date: 2021-09-02
 Authors@R: 
     c(person(given = "Myo Minn",
              family = "Oo",
@@ -15,6 +17,14 @@ Encoding: UTF-8
 LazyData: true
 LazyDataCompression: bzip2
 Depends: R(>= 4.0.0)
+Description: This is a tool for estimating child mortality. Current implementation includes the Trussell version of the Brass method using the Coale-Demeny model life tables and supporting datasets of coefficients and automatic interpolating values between probabilities of dying at a certain age and model tables. 
+URL: https://github.com/myominnoo/u5mr
+BugReports: https://github.com/myominnoo/u5mr/issues
+Depends: R(>= 4.0.0)
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+LazyDataCompression: bzip2
 Suggests: knitr, rmarkdown
 RoxygenNote: 7.1.1
 Roxygen: list(markdown = TRUE)
