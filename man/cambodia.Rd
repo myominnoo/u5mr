@@ -18,7 +18,7 @@ Fake summary data used to demonstrate the application of Cohort-derived and Peri
 developed by Rajaratnam et al in 2010.
 }
 \details{
-\if{html}{\out{<div class="r">}}\preformatted{## codes used to derive the dataset `cambodia`
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{## codes used to derive the dataset `cambodia`
 
 ## install.packages("tidyverse", dependencies = TRUE)
 ## install.packages("devtools", dependencies = TRUE)

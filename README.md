@@ -9,13 +9,20 @@
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 <!-- badges: end -->
 
-`u5mr` is a open-source R package for estimating the child mortality.
+`u5mr` is a open-source R package for estimating child mortality.
 Current implementation includes the Trussell version of the Brass method
-using the Coale-Demeny model life tables and supporting datasets of
-coefficients and automatic interpolating values between probabilities of
-dying at a certain age and model tables.
+using the Coale-Demeny model life tables, the maternal age
+cohort-dervied (MAC) and period-derived (MAP) methods by Rajaratnam et
+al.
 
 ## Installation
+
+The package is now available on CRAN. The easiest way to download is to
+install directly using the code below.
+
+``` r
+install.packages("u5mr")
+```
 
 To download the developmental version of the u5mr package, use the code
 below.
@@ -27,8 +34,11 @@ devtools::install_github("myominnoo/u5mr")
 
 ## Usage
 
-The first example is using Bangladesh survey data and model South of the
-Coale-Demeny life table.
+> Note: Examples of most of the main functions are described in the
+> several vignettes listed on <https://cran.r-project.org/package=u5mr>.
+
+The first example is using `Bangladesh` survey data and model `South` of
+the Coale-Demeny life table.
 
 ``` r
 library(u5mr)
@@ -208,15 +218,13 @@ For questions and other discussion, please directly email me
 
 To cite the u5mr package in publications use
 
-``` 
-  @Manual{Myo2020space,
-    title = {Under-Five Child Mortality Estimation using the R Package u5mr},
-    author = {Myo Minn Oo},
-    year = {2021}
-  }
-```
+      @Manual{Myo2020space,
+        title = {Under-Five Child Mortality Estimation using the R Package u5mr},
+        author = {Myo Minn Oo},
+        year = {2021}
+      }
 
------
+------------------------------------------------------------------------
 
 Please note that this project is looking for contributors. By
 participating in this project, you agree to abide by its terms with

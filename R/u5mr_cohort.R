@@ -1,4 +1,4 @@
-#' Estimating under-five mortality using Maternal age cohort-derived methods
+#' Estimating under-five mortality using Maternal Age Cohort-derived method (MAC)
 #'
 #' @description
 #'

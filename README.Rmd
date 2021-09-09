@@ -20,9 +20,15 @@ knitr::opts_chunk$set(
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 <!-- badges: end -->
 
-`u5mr` is a open-source R package for estimating the child mortality. Current implementation includes the Trussell version of the Brass method using the Coale-Demeny model life tables and supporting datasets of coefficients and automatic interpolating values between probabilities of dying at a certain age and model tables.
+`u5mr` is a open-source R package for estimating child mortality. Current implementation includes the Trussell version of the Brass method using the Coale-Demeny model life tables, the maternal age cohort-dervied (MAC) and period-derived (MAP) methods by Rajaratnam et al.
 
 ## Installation
+
+The package is now available on CRAN. The easiest way to download is to install directly using the code below.
+
+``` r
+install.packages("u5mr")
+```
 
 To download the developmental version of the u5mr package, use the code below. 
 
@@ -33,7 +39,9 @@ devtools::install_github("myominnoo/u5mr")
 
 ## Usage
 
-The first example is using Bangladesh survey data and model South of the Coale-Demeny life table. 
+> Note: Examples of most of the main functions are described in the several vignettes listed on [https://cran.r-project.org/package=u5mr](https://cran.r-project.org/package=u5mr).
+
+The first example is using `Bangladesh` survey data and model `South` of the Coale-Demeny life table. 
 
 ```{r demo1}
 library(u5mr)

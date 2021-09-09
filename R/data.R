@@ -218,3 +218,91 @@
 #'
 #' @source \href{https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1000253}{PLoS MEDICINE}
 "cambodia"
+
+
+#' Distribution of birthdays for calculating maternal age period-derived U5MR estimates
+#'
+#' The data of distribution of birthdays for different regions.
+#'
+#' - `ASIA`
+#' - `LATC` (Latin America and the Carribbean)
+#' - `NAME` (North Africa and Middle East)
+#' - `SASE` (Sub-Saharan Africa, South/East)
+#' - `SAWC` (Sub-Saharan Africa, West/Central)
+#'
+#' @docType data
+#'
+#' @usage data(birthdays_distribution)
+#'
+#' @format A data frame
+#'
+#' @keywords datasets
+#'
+#' @references Rajaratnam JK, Tran LN, Lopez AD, Murray CJL (2010) Measuring Under-Five Mortality: Validation of New Low-Cost Methods. PLOS Medicine 7(4): e1000253.
+#' (\doi{10.1371/journal.pmed.1000253}{10.1371/journal.pmed.1000253})
+#'
+#' @source \href{https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1000253}{PLoS MEDICINE}
+"birthdays_distribution"
+
+
+#' Distribution of death days for calculating maternal age period-derived U5MR estimates
+#'
+#' The data of distribution of birthdays for different regions.
+#'
+#' - `ASIA`
+#' - `LATC` (Latin America and the Carribbean)
+#' - `NAME` (North Africa and Middle East)
+#' - `SASE` (Sub-Saharan Africa, South/East)
+#' - `SAWC` (Sub-Saharan Africa, West/Central)
+#'
+#' @docType data
+#'
+#' @usage data(deathdays_distribution)
+#'
+#' @format A data frame
+#'
+#' @keywords datasets
+#'
+#' @references Rajaratnam JK, Tran LN, Lopez AD, Murray CJL (2010) Measuring Under-Five Mortality: Validation of New Low-Cost Methods. PLOS Medicine 7(4): e1000253.
+#' (\doi{10.1371/journal.pmed.1000253}{10.1371/journal.pmed.1000253})
+#'
+#' @source \href{https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1000253}{PLoS MEDICINE}
+"deathdays_distribution"
+
+#' Model coefficients for the Maternal Age Period-derived method
+#'
+#' Coefficients provided by Rajaratnam et al for estimation of under-five child
+#' mortality data from the maternal age period-derived method (MAP).
+#'
+#' @docType data
+#'
+#' @usage data(coef_map_5q0)
+#'
+#' @format A data frame
+#'
+#' @keywords datasets
+#'
+#' @references Rajaratnam JK, Tran LN, Lopez AD, Murray CJL (2010) Measuring Under-Five Mortality: Validation of New Low-Cost Methods. PLOS Medicine 7(4): e1000253.
+#' (\doi{10.1371/journal.pmed.1000253}{10.1371/journal.pmed.1000253})
+#'
+#' @source \href{https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1000253}{PLoS MEDICINE}
+"coef_map_5q0"
+
+#' Random effect coefficients at country level for the Maternal Age Period-derived method
+#'
+#' Random effect coefficients provided by Rajaratnam et al for estimation of under-five child
+#' mortality data from the maternal age period-derived method (MAP).
+#'
+#' @docType data
+#'
+#' @usage data(coef_map_re)
+#'
+#' @format A data frame
+#'
+#' @keywords datasets
+#'
+#' @references Rajaratnam JK, Tran LN, Lopez AD, Murray CJL (2010) Measuring Under-Five Mortality: Validation of New Low-Cost Methods. PLOS Medicine 7(4): e1000253.
+#' (\doi{10.1371/journal.pmed.1000253}{10.1371/journal.pmed.1000253})
+#'
+#' @source \href{https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1000253}{PLoS MEDICINE}
+"coef_map_re"

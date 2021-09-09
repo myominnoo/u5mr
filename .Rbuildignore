@@ -2,3 +2,6 @@
 ^\.Rproj\.user$
 ^data-raw$
 ^CRAN-RELEASE$
+^u5mr\.Rcheck$
+^u5mr.*\.tar\.gz$
+^u5mr.*\.tgz$
