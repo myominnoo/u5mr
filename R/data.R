@@ -27,7 +27,6 @@
 #' to the Estimation of Child Mortality No.107:1-83
 #' (\href{https://www.un.org/en/development/desa/population/publications/pdf/mortality/stepguide_childmort.pdf}{United Nations})
 #'
-#' @source \href{https://www.un.org/development/desa/pd/content/step-step-guide-estimation-child-mortality}{United Nations Population Division}
 "coale_demeny_ltm"
 
 
@@ -55,7 +54,6 @@
 #' to the Estimation of Child Mortality No.107:1-83
 #' (\href{https://www.un.org/en/development/desa/population/publications/pdf/mortality/stepguide_childmort.pdf}{United Nations})
 #'
-#' @source \href{https://www.un.org/development/desa/pd/content/step-step-guide-estimation-child-mortality}{United Nations Population Division}
 "coeff_trussell_ki"
 
 
@@ -86,7 +84,6 @@
 #' to the Estimation of Child Mortality No.107:1-83
 #' (\href{https://www.un.org/en/development/desa/population/publications/pdf/mortality/stepguide_childmort.pdf}{United Nations})
 #'
-#' @source \href{https://www.un.org/development/desa/pd/content/step-step-guide-estimation-child-mortality}{United Nations Population Division}
 "coeff_trussell_ti"
 
 
@@ -111,7 +108,6 @@
 #' to the Estimation of Child Mortality No.107:1-83
 #' (\href{https://www.un.org/en/development/desa/population/publications/pdf/mortality/stepguide_childmort.pdf}{United Nations})
 #'
-#' @source \href{https://www.un.org/development/desa/pd/content/step-step-guide-estimation-child-mortality}{United Nations Population Division}
 "bangladesh"
 
 
