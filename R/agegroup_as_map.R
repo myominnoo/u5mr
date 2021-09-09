@@ -8,7 +8,7 @@
 #' `agegroup` with two yearly intervals between 14 and 50.
 #'
 #' @param data processed data
-#' @param women total number of women
+#' @param age age of women
 #'
 #' @return `data.frame`
 #'

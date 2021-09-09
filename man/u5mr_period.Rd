@@ -2,16 +2,46 @@
 % Please edit documentation in R/u5mr_period.R
 \name{u5mr_period}
 \alias{u5mr_period}
-\title{Estimating under-five mortality using Maternal age cohort-derived methods}
+\title{Estimating under-five mortality using Maternal Age Period-derived method (MAP)}
 \usage{
-u5mr_period()
+u5mr_period(
+  data,
+  child_born = "child_born",
+  child_dead = "child_dead",
+  agegrp = "agegrp",
+  svy_wt = "svy_wt",
+  iso3 = "KHM",
+  svy_region = "ASIA",
+  svy_year = 1234
+)
+}
+\arguments{
+\item{data}{preprocessed data}
+
+\item{child_born}{children ever born}
+
+\item{child_dead}{children dead}
+
+\item{agegrp}{age grouping or time since first birth}
+
+\item{svy_wt}{sample weights: if not available, use 1.}
+
+\item{iso3}{the \code{iso3} code of the country from which the survey data come}
+
+\item{svy_region}{region of the country from which the survey data come
+\itemize{
+\item \code{ASIA}
+\item \code{LATC} (Latin America and the Carribbean)
+\item \code{NAME} (North Africa and Middle East)
+\item \code{SASE} (Sub-Saharan Africa, South/East)
+\item \code{SAWC} (Sub-Saharan Africa, West/Central)
+}}
+
+\item{svy_year}{end of the survey}
 }
 \value{
 \code{data.frame}
 \itemize{
-\item \code{iso3} - total number of women
-\item \code{svy_year} - total number of children ever born
-\item \code{agegrp} - five-year age groups
 \item \code{ref_time}  - time between survey year and interpolated year
 \item \code{year}  - reference year
 \item \code{q5} - under-five mortality
@@ -20,54 +50,53 @@ u5mr_period()
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#stable}{\figure{lifecycle-stable.svg}{options: alt='[Stable]'}}}{\strong{[Stable]}}
 
-\code{u5mr_period()} uses the maternal age cohort-derived methods (MAC) through summary
+\code{u5mr_period()} uses the maternal age period-derived method (MAP) through summary
 birth history information and maternal age (or time since first birth) to
 calculate the under-five mortality estimates.
 }
 \details{
-In this cohort-derived method, under-five mortality and reference time are estimated
-through summary birth history information from the mothers and her age or time since
-her first birth.
+In this period-derived method, under-five mortality and reference time are estimated
+through distributions of child birthdays and death days for different categories
+of mothers, stratified by maternal information such as region, age, and number
+of child ever born or dead. These distributions are used to find the expected number
+of children ever born and dead in every year prior to the survey (up to 25 years) for
+a mother in each particular strata.
 
-In case sample weights are available for the mothers, final variables
-should be multiplied by these weights before summarizing.
+By applying these distributions to each mother in each strata, and summing
+across all strata, expected numbers of children ever born (CEB) and child dead
+(CD) are generated for each year prior to the survey. The ratio of CD and
+CEB for each year can then be calculated.
 
 \strong{Computational Procedure}
 
-Two formulas were used to quantify MAC method:
+The formulas used to quantify MAP method is as follows:
 
-\strong{\eqn{5q0} component}
-
-logit(\out{5q0<sub>ijk</sub>}) = \eqn{\beta}\out{<sub>0i</sub>} + \out{U<sub>ij</sub>} +
-\eqn{\beta}\out{<sub>1i</sub>} x logit(\out{CD<sub>ijk</sub>} /
-\out{CEB<sub>ijk</sub>}) + \eqn{\beta}\out{<sub>2i</sub>} x \out{CEB<sub>ijk</sub>} +
-\eqn{\beta}\out{<sub>3i</sub>} x PR1 + \eqn{\beta}\out{<sub>4i</sub>} x PR2 +
-\eqn{\epsilon}\out{<sub>ijk</sub>}
+logit(\out{5q0<sub>tjk</sub>}) = \eqn{\beta}\out{<sup>0</sup><sub>t</sub>} +
+\out{U<sub>tj</sub>} + \eqn{\beta}\out{<sup>1</sup><sub>t</sub>} x
+logit(\out{CD<sub>tjk</sub>} / \out{CEB<sub>tjk</sub>}) +
+\eqn{\epsilon}\out{<sub>tjk</sub>}
 
 where
 
-i = 5-year maternal age group \eqn{\epsilon} (15-19, 20-24, ... , 45-49)
+t = index of calendar time \eqn{\epsilon} (0, 24)
 j = country
 k = survey
-\out{CD<sub>i</sub>} = total dead children from maternal age group \code{i}
-\out{CEB<sub>i</sub>} = total children ever born from maternal age group \code{i}
-PR1 = ratio of parity among maternal age group 15-19 and parity among maternal age
-group 20-24
-PR2 = ratio of parity among maternal age group 20-24 and parity among maternal age
-group 25-29
-\out{U<sub>ij</sub>} = country-specific random effects
+\out{CD<sub>i</sub>} = total dead children in time bin \code{t}
+\out{CEB<sub>i</sub>} = total children ever born in time bin \code{t}
+}
+\examples{
 
-All coefficients vary by maternal age group, as indicated by \code{i} and the random
-effects also vary by country, as indicated by \code{j}.
+data("microdata")
+## get only female
+md <- subset(microdata, sex == 2)
+## get those aged between 14 and 50
+md <- subset(md, age >= 15 & age < 50)
+## create age group into 2-yearly intervals
+md <- agegroup_as_map(md, age = "age")
+u5mr_period(md, child_born = "ceb", child_dead = "cd", agegrp = "agegroup",
+            svy_wt = "svy_wt", iso3 = "KHM",
+            svy_region = "ASIA", svy_year = 1234)
 
-\strong{Reference time component}
-
-\out{reftime<sub>ijk</sub>} = \eqn{\beta}\out{<sub>0i</sub>} +
-\eqn{\beta}\out{<sub>1i</sub>} x (\out{CD<sub>ijk</sub>} /
-\out{CEB<sub>ijk</sub>}) +
-\eqn{\beta}\out{<sub>2i</sub>} x \out{CEB<sub>ijk</sub>} +
-\eqn{\beta}\out{<sub>3i</sub>} x PR1 + \eqn{\beta}\out{<sub>4i</sub>} x PR2 +
-\eqn{\epsilon}\out{<sub>ijk</sub>}
 }
 \references{
 Rajaratnam JK, Tran LN, Lopez AD, Murray CJL (2010) Measuring Under-Five Mortality: Validation of New Low-Cost Methods. PLOS Medicine 7(4): e1000253.

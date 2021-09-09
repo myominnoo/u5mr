@@ -9,6 +9,22 @@
 #' calculate the under-five mortality estimates.
 #'
 #'
+#' @param data preprocessed data
+#' @param child_born children ever born
+#' @param child_dead children dead
+#' @param agegrp age grouping or time since first birth
+#' @param svy_wt sample weights: if not available, use 1.
+#' @param iso3 the `iso3` code of the country from which the survey data come
+#' @param svy_region region of the country from which the survey data come
+#'
+#' - `ASIA`
+#' - `LATC` (Latin America and the Carribbean)
+#' - `NAME` (North Africa and Middle East)
+#' - `SASE` (Sub-Saharan Africa, South/East)
+#' - `SAWC` (Sub-Saharan Africa, West/Central)
+#'
+#' @param svy_year end of the survey
+#'
 #' @details
 #'
 #' In this period-derived method, under-five mortality and reference time are estimated
@@ -66,18 +82,18 @@
 #' md <- agegroup_as_map(md, age = "age")
 #' u5mr_period(md, child_born = "ceb", child_dead = "cd", agegrp = "agegroup",
 #'             svy_wt = "svy_wt", iso3 = "KHM",
-#'             svy_region = "ASIA", svy_date = 1234)
+#'             svy_region = "ASIA", svy_year = 1234)
 #'
 #' @export
 u5mr_period <- function(data, child_born = "child_born", child_dead = "child_dead",
                         agegrp = "agegrp", svy_wt = "svy_wt", iso3 = "KHM",
-                        svy_region = "ASIA", svy_date = 1234) {
+                        svy_region = "ASIA", svy_year = 1234) {
   ceb <- data[[child_born]]
   cd <- data[[child_dead]]
   agegroup <- data[[agegrp]]
   svy_wt <- data[[svy_wt]]
 
-  mcd <- data.frame(ceb, cd, agegroup, svy_wt, svy_date)
+  mcd <- data.frame(ceb, cd, agegroup, svy_wt, svy_year)
 
   ## obtain expected number of children ever born
   ## for each year prior to the survey
@@ -86,7 +102,7 @@ u5mr_period <- function(data, child_born = "child_born", child_dead = "child_dea
   names(ceb) <- c("agegroup", "ceb", "wtper")
   ceb$region <- svy_region
 
-  load("./data/birthdays_distribution.rda")
+  birthdays_distribution <- get_coef_data("birthdays_distribution")
   ceb <- merge.data.frame(ceb, birthdays_distribution,
                           by = c("region", "agegroup", "ceb"))
   ceb <- sapply(0:24, function(x) {
@@ -102,7 +118,7 @@ u5mr_period <- function(data, child_born = "child_born", child_dead = "child_dea
   names(cd) <- c("agegroup", "cd", "wtper")
   cd$region <- svy_region
 
-  load("./data/deathdays_distribution.rda")
+  deathdays_distribution <- get_coef_data("deathdays_distribution")
   cd <- merge.data.frame(cd, deathdays_distribution,
                          by = c("region", "agegroup", "cd"))
   cd <- sapply(0:24, function(x) {
@@ -118,8 +134,9 @@ u5mr_period <- function(data, child_born = "child_born", child_dead = "child_dea
   map$cdceb <- map$cd / map$ceb
   map$logitcdceb <- log(map$cdceb/(1-map$cdceb))
 
-  load("./data/coef_map_5q0.rda")
-  load("./data/coef_map_re.rda")
+
+  coef_map_5q0 <- get_coef_data("coef_map_5q0")
+  coef_map_re <- get_coef_data("coef_map_re")
   map <- merge.data.frame(map, coef_map_5q0, by = "reftime")
   map <- merge.data.frame(map, coef_map_re, by = c("iso3", "reftime"))
 
@@ -129,7 +146,7 @@ u5mr_period <- function(data, child_born = "child_born", child_dead = "child_dea
   map$q5 <- exp(map$logit_5q0 ) / (1 + exp(map$logit_5q0 ))
 
   ## calculate year
-  map$year <- svy_date - map$reftime
+  map$year <- svy_year - map$reftime
 
   ## order the variables
   map$ref_time <- map$reftime
@@ -141,4 +158,8 @@ u5mr_period <- function(data, child_born = "child_born", child_dead = "child_dea
 }
 
 
+# HELPERS -----------------------------------------------------------------
 
+get_coef_data <- function(x) {
+  eval(parse(text = x))
+}

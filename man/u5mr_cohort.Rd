@@ -2,7 +2,7 @@
 % Please edit documentation in R/u5mr_cohort.R
 \name{u5mr_cohort}
 \alias{u5mr_cohort}
-\title{Estimating under-five mortality using Maternal age cohort-derived methods}
+\title{Estimating under-five mortality using Maternal Age Cohort-derived method (MAC)}
 \usage{
 u5mr_cohort(
   data,
