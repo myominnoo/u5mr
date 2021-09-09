@@ -18,7 +18,7 @@
 #' @param svy_region region of the country from which the survey data come
 #'
 #' - `ASIA`
-#' - `LATC` (Latin America and the Carribbean)
+#' - `LATC` (Latin America and the Caribbean)
 #' - `NAME` (North Africa and Middle East)
 #' - `SASE` (Sub-Saharan Africa, South/East)
 #' - `SAWC` (Sub-Saharan Africa, West/Central)

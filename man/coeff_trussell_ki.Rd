@@ -3,7 +3,7 @@
 \docType{data}
 \name{coeff_trussell_ki}
 \alias{coeff_trussell_ki}
-\title{Coefficients for the estimation of child mortality multipliers \code{k(i)}}
+\title{Coefficients for the estimation of child mortality multipliers}
 \format{
 A data frame
 }

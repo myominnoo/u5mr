@@ -31,7 +31,7 @@ u5mr_period(
 \item{svy_region}{region of the country from which the survey data come
 \itemize{
 \item \code{ASIA}
-\item \code{LATC} (Latin America and the Carribbean)
+\item \code{LATC} (Latin America and the Caribbean)
 \item \code{NAME} (North Africa and Middle East)
 \item \code{SASE} (Sub-Saharan Africa, South/East)
 \item \code{SAWC} (Sub-Saharan Africa, West/Central)

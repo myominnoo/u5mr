@@ -3,7 +3,7 @@
 \docType{data}
 \name{coeff_trussell_ti}
 \alias{coeff_trussell_ti}
-\title{Coefficients for the estimation of the time reference \code{t(i)}}
+\title{Coefficients for the estimation of the time reference}
 \format{
 A data frame
 }

@@ -30,7 +30,7 @@
 "coale_demeny_ltm"
 
 
-#' Coefficients for the estimation of child mortality multipliers `k(i)`
+#' Coefficients for the estimation of child mortality multipliers
 #'
 #' This is a dataset of coefficients used to estimate multipliers `k(i)` in the TRUSSELL version of
 #' the BRASS method, using Coale-Demeny mortality models.
@@ -57,7 +57,7 @@
 "coeff_trussell_ki"
 
 
-#' Coefficients for the estimation of the time reference `t(i)`
+#' Coefficients for the estimation of the time reference
 #'
 #' This is a dataset of coefficients used to derive the time reference `t(i)`,
 #' for values of `q(x)` in the TRUSSELL version of
@@ -221,7 +221,7 @@
 #' The data of distribution of birthdays for different regions.
 #'
 #' - `ASIA`
-#' - `LATC` (Latin America and the Carribbean)
+#' - `LATC` (Latin America and the Caribbean)
 #' - `NAME` (North Africa and Middle East)
 #' - `SASE` (Sub-Saharan Africa, South/East)
 #' - `SAWC` (Sub-Saharan Africa, West/Central)
@@ -246,7 +246,7 @@
 #' The data of distribution of birthdays for different regions.
 #'
 #' - `ASIA`
-#' - `LATC` (Latin America and the Carribbean)
+#' - `LATC` (Latin America and the Caribbean)
 #' - `NAME` (North Africa and Middle East)
 #' - `SASE` (Sub-Saharan Africa, South/East)
 #' - `SAWC` (Sub-Saharan Africa, West/Central)
@@ -302,3 +302,63 @@
 #'
 #' @source \href{https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1000253}{PLoS MEDICINE}
 "coef_map_re"
+
+
+
+#' Random effect coefficients for the Maternal Age Cohort-derived method
+#'
+#' Random effect coefficients provided by Rajaratnam et al for estimation of under-five child
+#' mortality data from the maternal age Cohort-derived method (MAC).
+#'
+#' @docType data
+#'
+#' @usage data(coef_mac_re)
+#'
+#' @format A data frame
+#'
+#' @keywords datasets
+#'
+#' @references Rajaratnam JK, Tran LN, Lopez AD, Murray CJL (2010) Measuring Under-Five Mortality: Validation of New Low-Cost Methods. PLOS Medicine 7(4): e1000253.
+#' (\doi{10.1371/journal.pmed.1000253}{10.1371/journal.pmed.1000253})
+#'
+#' @source \href{https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1000253}{PLoS MEDICINE}
+"coef_mac_re"
+
+#' Model coefficients for the Maternal Age Cohort-derived method
+#'
+#' Coefficients provided by Rajaratnam et al for estimation of under-five child
+#' mortality data from the maternal age cohort-derived method (MAC).
+#'
+#' @docType data
+#'
+#' @usage data(coef_mac_5q0)
+#'
+#' @format A data frame
+#'
+#' @keywords datasets
+#'
+#' @references Rajaratnam JK, Tran LN, Lopez AD, Murray CJL (2010) Measuring Under-Five Mortality: Validation of New Low-Cost Methods. PLOS Medicine 7(4): e1000253.
+#' (\doi{10.1371/journal.pmed.1000253}{10.1371/journal.pmed.1000253})
+#'
+#' @source \href{https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1000253}{PLoS MEDICINE}
+"coef_mac_5q0"
+
+
+#' Coefficients for calculating time reference in the Maternal Age Cohort-derived method
+#'
+#' Coefficients provided by Rajaratnam et al for estimation of under-five child
+#' mortality data from the maternal age cohort-derived method (MAC).
+#'
+#' @docType data
+#'
+#' @usage data(coef_mac_ti)
+#'
+#' @format A data frame
+#'
+#' @keywords datasets
+#'
+#' @references Rajaratnam JK, Tran LN, Lopez AD, Murray CJL (2010) Measuring Under-Five Mortality: Validation of New Low-Cost Methods. PLOS Medicine 7(4): e1000253.
+#' (\doi{10.1371/journal.pmed.1000253}{10.1371/journal.pmed.1000253})
+#'
+#' @source \href{https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1000253}{PLoS MEDICINE}
+"coef_mac_ti"

@@ -19,7 +19,7 @@ The data of distribution of birthdays for different regions.
 \details{
 \itemize{
 \item \code{ASIA}
-\item \code{LATC} (Latin America and the Carribbean)
+\item \code{LATC} (Latin America and the Caribbean)
 \item \code{NAME} (North Africa and Middle East)
 \item \code{SASE} (Sub-Saharan Africa, South/East)
 \item \code{SAWC} (Sub-Saharan Africa, West/Central)
