@@ -7,9 +7,6 @@
 \format{
 A data frame
 }
-\source{
-\href{https://www.un.org/development/desa/pd/content/step-step-guide-estimation-child-mortality}{United Nations Population Division}
-}
 \usage{
 data(coeff_trussell_ti)
 }

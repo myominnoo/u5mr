@@ -8,9 +8,6 @@
 An object of class \code{"list"}; consist of four \code{data.frame} for
 \code{male}, \code{female} and \verb{both sexes}.
 }
-\source{
-\href{https://www.un.org/development/desa/pd/content/step-step-guide-estimation-child-mortality}{United Nations Population Division}
-}
 \usage{
 data(coale_demeny_ltm)
 }
